@@ -59,6 +59,18 @@ abstract class ArgType<T : Any>(val hasParameter: kotlin.Boolean) {
     }
 
     /**
+     * Argument type for long values.
+     */
+    object Int : ArgType<kotlin.Long>(true) {
+        override val description: kotlin.String
+            get() = "{ Long }"
+
+        override fun convert(value: kotlin.String, name: kotlin.String): kotlin.Long =
+            value.toLongOrNull()
+                    ?: throw ParsingException("Option $name is expected to be integer number. $value is provided.")
+    }
+
+    /**
      * Argument type for double values.
      */
     object Double : ArgType<kotlin.Double>(true) {
