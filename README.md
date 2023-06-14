@@ -68,6 +68,7 @@ There are 2 base entity: option and argument.
 Command line entities can be several types:
 * ArgType.Boolean
 * ArgType.Int
+* ArgType.Long
 * ArgType.String
 * ArgType.Double
 * ArgType.Choice (value can be only from predefined list)
